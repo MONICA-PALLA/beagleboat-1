@@ -8,8 +8,8 @@ def parseGPS(str):
 
 
 #replace the serial port and the baud rate with the desired values"
-serialPort = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
-
+#serialPort = serial.Serial("/dev/ttyAMA0", 9600, timeout=0.5)
+serialPort = serial.Serial("/dev/ttyS2", 4800, timeout=0.5)
 
 
 while True:
