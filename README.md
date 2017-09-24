@@ -1,3 +1,2 @@
 ## welcome to ASV
-
-This is my FCom Project in sem 4
+Project related to swarm of ASVs.
