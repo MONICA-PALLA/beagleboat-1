@@ -32,7 +32,7 @@ nPop = 4;              % Population Size (Swarm Size) (In my case it the no. of 
 % Inertia Coefficient
 w = 1;
 
-wdamp = 0.99            % Damping Ratio of Inertia Coefficient
+%wdamp = 0.99            % Damping Ratio of Inertia Coefficient
 c1 = 2;                 % Personal Acceleration Coefficient  (Need to research out from references) 
 c2 = 2;                 % Global Acceleration Coefficient 
 
@@ -52,10 +52,10 @@ particle = repmat(empty_particle, nPop, 1);
 %GlobalBest.Cost = inf;  % worst case value so inf if it is minimization problem and -inf for Maximization
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-GlobalBest.Cost = 0;
-GlobalBest.Position =  [0,0];
+%GlobalBest.Cost = 0;
+%GlobalBest.Position =  [0,0];
 
-%GlobalBest.Cost = Inf;
+GlobalBest.Cost = Inf;
 
 % because of improper execution of if statement in for loop
 
@@ -78,9 +78,9 @@ for i=1:nPop
     % In my case the cost can be distance from the goal, distance form the obstacle, neighbour or e.t.c.,
     
     % Update Global Best   
-%    if particle(i).Best.Cost < GlobalBest.Cost
-%       GlobalBest = particle(i).Best;
-%    end
+    if particle(i).Best.Cost < GlobalBest.Cost
+       GlobalBest = particle(i).Best;
+    end
     % In my case I need to define the goal if I'm not going to update
 
 end
@@ -130,7 +130,7 @@ for it=1:MaxIt
     % Display Iteration Information
     disp(['Iteration ' num2str(it) ': Best Cost = ' num2str(BestCosts(it))]);
     
-    w = w * wdamp;
+   % w = w * wdamp;
     
     
 end
